@@ -1,9 +1,15 @@
 CFLAGS = -g -Wall
 
-all:  sorttest
+all:  sorttest sorttest2
+
+sorttest2: sorttest2.o sort.o timesort.o
+	gcc $(CFLAGS) sorttest2.o sort.o timesort.o -o sorttest2
 
 sorttest: sorttest.o sort.o timesort.o
 	gcc $(CFLAGS) sorttest.o sort.o timesort.o -o sorttest
+
+sorttest2.o: sorttest2.c sort.h
+	gcc $(CFLAGS) -c sorttest2.c
 
 sorttest.o: sorttest.c sort.h
 	gcc $(CFLAGS) -c sorttest.c
