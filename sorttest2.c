@@ -22,16 +22,18 @@ int main (int argc, const char* argv[]) {
 
   int *nums; // space to store numbers entered from the command line.
 
-  int next_num; // Integer read from the command line goes here.
   int i; // array index 
   int num_nums; // How many numbers actually entered on the command line.
 
   // Check that there are at least two numbers
-  num_nums = argc - 1;
-  if (num_nums < 2) { 
-    printf("Must enter at least 2 numbers on the command line! Exiting.\n");
+  if (argc - 1 < 2 || argc - 1 > 3) { 
+    printf("Please enter the number of numbers as well as which sorting");
+    printf(" algorithm to use (the range is [0, 2])\n");
     return 1; // Indicate failure
   }
+
+  num_nums = atoi(argv[1]);
+	int sortingChoice = atoi(argv[2]);
 
   // Allocate an array big enough to hold the numbers
   nums = (int*) calloc(num_nums, sizeof(int));
@@ -39,14 +41,12 @@ int main (int argc, const char* argv[]) {
     fprintf(stderr, "Unable to allocate enough memory to hold the numbers.\n");
   }
 
-  /* Read all the numbers from the command line and put them into the array */
   for (i = 0; i < num_nums; i++) {
-    next_num = atoi(argv[i+1]); // Get string from command line; convert to int
-    nums[i] = next_num; // store into the array
+    nums[i] = rand();
   }
 
   // Now print, sort, and print the array, and time how long the sorting took.
-  timesort(nums, num_nums, 0);
+  timesort(nums, num_nums, sortingChoice);
 
   return 0; // Indicate success!
 }
