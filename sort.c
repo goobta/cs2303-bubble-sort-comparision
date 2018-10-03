@@ -51,7 +51,7 @@ void sort_descending(int nums[], int count) {
  * @param t Struct to print.
  */
 void print_timeval(struct timeval t) {
-  printf("Not written yet.\n");
+  printf("Seconds: %ld Microseconds: %ld\n", t.tv_sec, t.tv_usec);
 }
 
 /** Calculates difference between two timestamps. 
