@@ -15,7 +15,7 @@ void print_int_array(int nums[], int count) {
 }
 
 /** Sorts an array of integers into descending order.
- * Uses the bubble sort algorithm.
+ * Uses the bubble sort algorithm. Increments the index pointing to the array
  *
  * @param nums Array to sort
  * @param count Number of elements to sort
@@ -48,7 +48,8 @@ void sort_descending0(int nums[], int count) {
 }
 
 /** Sorts an array of integers into descending order.
- * Uses the bubble sort algorithm.
+ * Uses the bubble sort algorithm. Increments indices instad of incrementing the
+ * index
  *
  * @param nums Array to sort
  * @param count Number of elements to sort
@@ -81,7 +82,7 @@ void sort_descending1(int* nums, int count) {
 }
 
 /** Sorts an array of integers into descending order.
- * Uses the bubble sort algorithm.
+ * Uses the bubble sort algorithm. Increments pointers instead of using indices
  *
  * @param nums Array to sort
  * @param count Number of elements to sort
