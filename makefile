@@ -21,7 +21,7 @@ timesort.o: timesort.c sort.h
 	gcc $(CFLAGS) -c timesort.c
 
 clean:
-	rm -f  *.o sorttest
+	rm -f  *.o sorttest sorttest2
 	rm -r -f html latex
 
 docs:
