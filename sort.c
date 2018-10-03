@@ -87,28 +87,29 @@ void sort_descending1(int* nums, int count) {
  * @param count Number of elements to sort
  */
 
-void sort_descending2(int nums[], int count) {
-  int round; // How many times left to go through the outer loop.
-  int i; // Loop counter for the inner loop
-  int inorder; // Used as a boolean (logical). 1 = array is in correct order.
-  int temp; // Temporary variable used while swapping array elements
+void sort_descending2(int* nums, int count) {
+  int round; 
+  int i; 
+  int inorder; 
+  int temp; 
+	int* workingCopy = nums;
 
-  inorder = 0; // Assume not sorted at the beginning
+  inorder = 0; 
 
-  // Repeat outer loop, one time less than the size of the array.
-  // Terminate early if array is in correct order.
   for(round = count - 1; (round > 0) && (!inorder); round--) {
-    inorder = 1; // Assume in correct order, until found otherwise.
-    // Repeat inner loop, testing array elements 0 through round
+    inorder = 1; 
+		workingCopy = nums;
+
     for (i = 0; i < round; i++) {
-      // Compare two adjacent elements of the array
-      if (nums[i] < nums[i+1]) {
-				// Not in correct relative order, so swap.
-				inorder = 0; // At least one pair had to be swapped
-				temp = nums[i]; // Swap!
-				nums[i] = nums[i+1];
-				nums[i+1] = temp;
+			int* next = workingCopy + 1;
+      if (*workingCopy < *next) {
+				inorder = 0; 
+				temp = *workingCopy; 
+				*workingCopy = *next;
+				*workingCopy = temp;
       }
+
+			workingCopy++;
     }
   }
 }
