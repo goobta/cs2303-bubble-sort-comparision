@@ -20,6 +20,8 @@ void timesort (int a[], int count, int choice) {
   print_int_array(a, count);
 
   gettimeofday(&start_time, NULL); // Get timestamp
+
+	// Determine which algorithm the user wanted to use.
 	if(choice == 0) sort_descending0(a, count);
 	else if(choice == 1) sort_descending1(a, count);
 	else if(choice == 2) sort_descending2(a, count);

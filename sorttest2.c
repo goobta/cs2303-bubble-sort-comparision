@@ -6,9 +6,14 @@
  * outputs them, sorts them in descending order, and outputs the sorted list.
  *
  * Usage:
- *         ./sorttest some_number another_number ...
+ *         ./sorttest number_of_numbers sorting_algorithm
  * Example:
- *         ./sorttest 2014 15 7000
+ *         ./sorttest 2014 2
+ *
+ * The sorting algorithm choices are as follows:
+ * 0 - The default implementation
+ * 1 - Adding to the index instead of incrementing the indext
+ * 2 - Incrementing pointers.
  *
  */
 
