@@ -26,12 +26,14 @@ int main (int argc, const char* argv[]) {
   int num_nums; // How many numbers actually entered on the command line.
 
   // Check that there are at least two numbers
-  if (argc - 1 < 1 || argc - 1 > 1) { 
-    printf("Please enter the number of digits! Exiting.\n");
+  if (argc - 1 < 2 || argc - 1 > 3) { 
+    printf("Please enter the number of numbers as well as which sorting");
+    printf(" algorithm to use (the range is [0, 2])\n");
     return 1; // Indicate failure
   }
 
   num_nums = atoi(argv[1]);
+	int sortingChoice = atoi(argv[2]);
 
   // Allocate an array big enough to hold the numbers
   nums = (int*) calloc(num_nums, sizeof(int));
@@ -44,7 +46,7 @@ int main (int argc, const char* argv[]) {
   }
 
   // Now print, sort, and print the array, and time how long the sorting took.
-  timesort(nums, num_nums);
+  timesort(nums, num_nums, sortingChoice);
 
   return 0; // Indicate success!
 }
